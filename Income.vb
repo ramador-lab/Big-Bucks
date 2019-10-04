@@ -35,3 +35,40 @@ Public Class Form1
     End Sub
 End Class
 
+////////// Separte Code ///////////////////////////////////////////////////////////////////////////////////////
+
+Public Class Form1
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        Dim Month As String = TextBox1.Text
+        Dim Income As Integer = TextBox2.Text
+
+
+
+        Me.Chart1.Series("Income").Points.AddXY(Month, Income)
+
+
+
+
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+
+    End Sub
+
+    Private Sub Clear_Click(sender As Object, e As EventArgs) Handles Clear.Click
+        For Each Control As Control In Me.Controls
+            If TypeOf Control Is TextBox1 Then
+
+                Control.Text = String.Empty
+
+            End If
+
+
+
+        Next
+    End Sub
+
+
+
+
