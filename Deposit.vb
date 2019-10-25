@@ -16,53 +16,91 @@ Public Class Deposit
 
     Dim Total_Pay As Double
     Dim Final_Pay As Double
+    Private Sub Enable_Click(sender As Object, e As EventArgs) Handles Enable.Click
+        Month.Enabled = True
 
+    End Sub
 
-    Private Sub Compute_Click(sender As Object, e As EventArgs) Handles Compute.Click
-
+    Private Sub Input1_Click(sender As Object, e As EventArgs) Handles Input1.Click
         ' Dim month As String = CStr(Me.Month.Text)
         month2 = Month.Text
-        If Month.Text = "January" Then
+        If Month.Text = "January" Or Month.Text = "january" Then
             current_month = 31
+            Hr_Pay.Enabled = True
 
-
-        ElseIf Month.Text = "February" Then
+        ElseIf Month.Text = "February" Or Month.Text = "february" Then
             current_month = 28
+            Hr_Pay.Enabled = True
 
-        ElseIf Month.Text = "March" Then
+        ElseIf Month.Text = "March" Or Month.Text = "march" Then
             current_month = 31
+            Hr_Pay.Enabled = True
 
-        ElseIf Month.Text = "April" Then
+        ElseIf Month.Text = "April" Or Month.Text = "april" Then
             current_month = 30
+            Hr_Pay.Enabled = True
 
-        ElseIf Month.Text = "May" Then
+        ElseIf Month.Text = "May" Or Month.Text = "may" Then
             current_month = 31
+            Hr_Pay.Enabled = True
 
-        ElseIf Month.Text = "June" Then
+        ElseIf Month.Text = "June" Or Month.Text = "june" Then
             current_month = 30
+            Hr_Pay.Enabled = True
 
-        ElseIf Month.Text = "July" Then
+        ElseIf Month.Text = "July" Or Month.Text = "july" Then
             current_month = 31
+            Hr_Pay.Enabled = True
 
-        ElseIf Month.Text = "August" Then
+        ElseIf Month.Text = "August" Or Month.Text = "august" Then
             current_month = 31
+            Hr_Pay.Enabled = True
 
-        ElseIf Month.Text = "September" Then
+        ElseIf Month.Text = "September" Or Month.Text = "september" Then
             current_month = 30
+            Hr_Pay.Enabled = True
 
-        ElseIf Month.Text = "October" Then
+        ElseIf Month.Text = "October" Or Month.Text = "october" Then
             current_month = 31
+            Hr_Pay.Enabled = True
 
-        ElseIf Month.Text = "November" Then
+        ElseIf Month.Text = "November" Or Month.Text = "november" Then
             current_month = 30
+            Hr_Pay.Enabled = True
 
-        ElseIf Month.Text = "December" Then
+        ElseIf Month.Text = "December" Or Month.Text = "decemer" Then
             current_month = 31
+            Hr_Pay.Enabled = True
 
         Else MsgBox("Not a valid Month")
 
 
         End If
+
+    End Sub
+    Private Sub Input2_Click(sender As Object, e As EventArgs) Handles Input2.Click
+
+        Ttl_Hrs.Enabled = True
+
+
+    End Sub
+    Private Sub Input3_Click(sender As Object, e As EventArgs) Handles Input3.Click
+
+        Type_Pay.Enabled = True
+
+    End Sub
+
+    Private Sub Input4_Click(sender As Object, e As EventArgs) Handles Input4.Click
+
+        Extra.Enabled = True
+
+    End Sub
+    Private Sub Input5_Click(sender As Object, e As EventArgs) Handles Input5.Click
+        Compute.Enabled = True
+
+    End Sub
+
+    Private Sub Compute_Click(sender As Object, e As EventArgs) Handles Compute.Click
 
 
         HrPay = Hr_Pay.Text
@@ -85,9 +123,8 @@ Public Class Deposit
 
 
         Total_Pay = (pay_style) * (Weekly_Hrs) * (HrPay) + (extra_income)
-        Final_Pay = Math.Round(Total_Pay, 3, MidpointRounding.AwayFromZero)
 
-        Final_Count.Text = CStr(Final_Pay)
+        Final_Count.Text = CStr(Math.Round(Total_Pay, 2))
 
 
 
@@ -100,8 +137,6 @@ Public Class Deposit
 
     Private Sub Month_TextChanged(sender As Object, e As EventArgs) Handles Month.TextChanged
 
-
-
     End Sub
 
     Private Sub Hr_Pay_TextChanged(sender As Object, e As EventArgs) Handles Hr_Pay.TextChanged
@@ -109,6 +144,7 @@ Public Class Deposit
     End Sub
 
     Private Sub Ttl_Hrs_TextChanged(sender As Object, e As EventArgs) Handles Ttl_Hrs.TextChanged
+
 
     End Sub
 
@@ -127,4 +163,6 @@ Public Class Deposit
     Private Sub Final_Count_TextChanged(sender As Object, e As EventArgs) Handles Final_Count.TextChanged
 
     End Sub
+
+
 End Class
