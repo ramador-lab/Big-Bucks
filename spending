@@ -1,0 +1,17 @@
+Public Class Form1
+    Dim Total_spend As Double
+    Dim Total_categories As String
+
+    Private Sub Category_Click(sender As Object, e As EventArgs) Handles Category.Click
+        Month.Enabled = True
+
+    End Sub
+
+    Current_month = 30
+
+    ElseIf Month.text = December Or Month.text = december
+
+    Current_month = 31
+    Or 
+    Month.text = February Or Month.text = february
+    Current_month = 28
